@@ -1,4 +1,4 @@
-# Last updated: 3/22/2025, 11:01:18 PM
+# Last updated: 3/22/2025, 11:01:27 PM
 def compareTwoStrings(string1: str, string2: str) -> str:
     if not string1 or not string2:
         return ''
