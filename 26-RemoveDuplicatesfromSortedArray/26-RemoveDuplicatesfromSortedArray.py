@@ -1,14 +1,11 @@
-# Last updated: 3/22/2025, 11:06:34 PM
+# Last updated: 3/22/2025, 11:27:32 PM
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        contentsSet = set()
-        i = 0
-        length = len(nums)
-        while i <= length - 1:
-            if nums[i] in contentsSet:
-                nums.pop(i)
-                length -= 1
-            else:
-                contentsSet.add(nums[i])
-                i += 1
-        return len(nums)
+        unique_num_count = 0
+        max_number_so_far = -500
+        for i in range(len(nums)):
+            if nums[i] > max_number_so_far:
+                max_number_so_far = nums[i]
+                nums[unique_num_count] = nums[i]
+                unique_num_count += 1
+        return unique_num_count
