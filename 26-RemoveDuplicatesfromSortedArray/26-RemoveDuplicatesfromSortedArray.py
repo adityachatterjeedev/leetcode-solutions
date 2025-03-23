@@ -1,4 +1,4 @@
-# Last updated: 3/22/2025, 11:27:32 PM
+# Last updated: 3/22/2025, 11:27:40 PM
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         unique_num_count = 0
