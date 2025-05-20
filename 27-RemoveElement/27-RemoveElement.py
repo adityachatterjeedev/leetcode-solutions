@@ -1,4 +1,4 @@
-# Last updated: 5/20/2025, 2:30:27 PM
+# Last updated: 5/20/2025, 2:30:38 PM
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         def swap(i, j):
