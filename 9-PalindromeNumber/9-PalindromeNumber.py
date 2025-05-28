@@ -1,4 +1,4 @@
-# Last updated: 5/28/2025, 4:42:10 PM
+# Last updated: 5/28/2025, 4:43:03 PM
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         # Negative numbers and numbers ending with 0 (but not 0 itself) are not palindromes
