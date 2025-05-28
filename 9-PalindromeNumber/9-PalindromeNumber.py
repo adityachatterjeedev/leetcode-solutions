@@ -1,8 +1,8 @@
-# Last updated: 5/28/2025, 4:40:47 PM
+# Last updated: 5/28/2025, 4:42:10 PM
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         # Negative numbers and numbers ending with 0 (but not 0 itself) are not palindromes
-        if x < 0 or (x % 10 == 0 and x != 0):
+        if x < 0 or (x != 0 and x % 10 == 0):
             return False
 
         reversed_half = 0
