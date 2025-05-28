@@ -1,22 +1,13 @@
-# Last updated: 5/28/2025, 4:34:53 PM
+# Last updated: 5/28/2025, 4:40:47 PM
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        if x < 0:
+        # Negative numbers and numbers ending with 0 (but not 0 itself) are not palindromes
+        if x < 0 or (x % 10 == 0 and x != 0):
             return False
-        
-        #no string conversions
-        x_copy = x
-        count = 0 # digit count
-        while x_copy > 0:
-            x_copy = x_copy // 10
-            count += 1
 
-        reverse_num = 0
-        x_copy = x
-        while x_copy > 0:
-            least_sig_digit = x_copy % 10
-            reverse_num += least_sig_digit * (10 ** (count - 1))
-            x_copy = x_copy // 10
-            count -= 1
+        reversed_half = 0
+        while x > reversed_half:
+            reversed_half = reversed_half * 10 + x % 10
+            x //= 10
 
-        return reverse_num == x
+        return x == reversed_half or x == reversed_half // 10
