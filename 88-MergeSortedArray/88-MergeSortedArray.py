@@ -1,11 +1,11 @@
-# Last updated: 5/17/2025, 8:18:08 PM
+# Last updated: 5/29/2025, 5:31:26 PM
 class Solution:
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
         """
         i, j, k = m - 1, n - 1, m + n - 1
-        
+        #start from the back
         while j >= 0:
             if i >= 0 and nums1[i] > nums2[j]:
                 nums1[k] = nums1[i]
