@@ -1,18 +1,18 @@
-# Last updated: 5/20/2025, 2:30:38 PM
+# Last updated: 5/29/2025, 9:12:24 PM
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        def swap(i, j):
-            temp = nums[i]
-            nums[i] = nums[j]
-            nums[j] = temp
-        
-        i, k = 0, len(nums) - 1
-        while i <= k:
-            if nums[i] == val:
-                swap(i,k)
-                k -= 1
-            else:
-                i += 1
-        return k+1
+        if len(nums) == 0:
+            return 0
 
+        k = 0
+        while nums[k] != val:
+            k += 1
+            if k == len(nums):
+                return k
+
+        for i in range(k, len(nums)):
+            if nums[i] != val:
+                nums[k] = nums[i]
+                k += 1
+        return k
         
