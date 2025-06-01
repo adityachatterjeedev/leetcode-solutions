@@ -1,9 +1,11 @@
-# Last updated: 6/1/2025, 2:35:10 AM
+# Last updated: 6/1/2025, 2:36:20 AM
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         result = []
         for i, num in enumerate(nums):
+            if num > 0:
+                break
             if i == 0 or (nums[i - 1] != nums[i]):
                 target = -num
                 l, r = i + 1, len(nums) - 1
