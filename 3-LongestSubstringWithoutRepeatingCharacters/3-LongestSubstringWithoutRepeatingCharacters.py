@@ -1,4 +1,4 @@
-# Last updated: 6/2/2025, 2:37:08 AM
+# Last updated: 6/2/2025, 2:37:58 AM
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         #sliding window
@@ -18,7 +18,7 @@ class Solution:
             else:
                 maxlen = max(maxlen, len(contents))
                 letter = s[r]
-                while s[l] != letter and l < r:
+                while s[l] != letter:
                     contents.remove(s[l])
                     l += 1
                 #do this again to remove the dupe from the substring
