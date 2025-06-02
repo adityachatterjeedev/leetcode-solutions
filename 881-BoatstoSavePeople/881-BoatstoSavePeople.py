@@ -1,23 +1,20 @@
-# Last updated: 6/2/2025, 3:39:49 AM
+# Last updated: 6/2/2025, 3:46:35 AM
 class Solution:
     def numRescueBoats(self, people: List[int], limit: int) -> int:
-        length = len(people)
-        if length in [0,1]:
-            return length
-
+        n = len(people)
         people.sort()
-        boat_count = 0
-        l, r = 0, length - 1
-        while l <= r: #fact, people[l] <= limit
-            if l == r:
-                boat_count += 1
-                break
-            weight_sum = people[l] + people[r]
-            if weight_sum <= limit:
-                l += 1
-                r -= 1
+        left, right = 0, n - 1
+        boat = 0
+        while left <= right:
+            total_weight = people[left] + people[right]
+            if total_weight > limit:
+                boat += 1
+                right -= 1
             else:
-                r -= 1
-            boat_count += 1
-
-        return boat_count
+                boat += 1
+                left += 1
+                right -= 1
+        # if left == right:
+        #     return boat + 1
+        return boat
+            
