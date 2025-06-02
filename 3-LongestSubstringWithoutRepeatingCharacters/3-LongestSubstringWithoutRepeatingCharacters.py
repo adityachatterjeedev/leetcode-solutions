@@ -1,4 +1,4 @@
-# Last updated: 6/2/2025, 2:38:07 AM
+# Last updated: 6/2/2025, 2:38:35 AM
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         #sliding window
