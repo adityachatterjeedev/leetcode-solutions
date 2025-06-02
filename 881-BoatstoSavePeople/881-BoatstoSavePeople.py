@@ -1,4 +1,4 @@
-# Last updated: 6/2/2025, 3:39:38 AM
+# Last updated: 6/2/2025, 3:39:49 AM
 class Solution:
     def numRescueBoats(self, people: List[int], limit: int) -> int:
         length = len(people)
