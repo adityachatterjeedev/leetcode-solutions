@@ -1,19 +1,16 @@
-# Last updated: 5/28/2025, 5:10:46 PM
+# Last updated: 6/4/2025, 4:12:11 AM
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        prev_num = None
-        count = 0
-        write = 0
-
-        for curr_num in nums:
-            if curr_num != prev_num:
-                prev_num = curr_num
-                count = 1
+        prev_elem = -100000
+        k = 0 #write position
+        elem_count = 1
+        for num in nums:
+            if num > prev_elem:
+                prev_elem = num
+                elem_count = 1
             else:
-                count += 1
-
-            if count <= 2:
-                nums[write] = curr_num
-                write += 1
-
-        return write
+                elem_count += 1
+            if elem_count <= 2:
+                nums[k] = prev_elem
+                k += 1
+        return k
