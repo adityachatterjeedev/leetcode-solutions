@@ -1,7 +1,6 @@
-# Last updated: 6/4/2025, 5:53:12 PM
+# Last updated: 6/4/2025, 5:53:28 PM
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        # Moore's Voting Algorithm
 
         el, count = None, 0
         for num in nums:
