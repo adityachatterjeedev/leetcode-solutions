@@ -1,4 +1,4 @@
-# Last updated: 6/4/2025, 4:12:11 AM
+# Last updated: 6/4/2025, 4:13:07 AM
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         prev_elem = -100000
