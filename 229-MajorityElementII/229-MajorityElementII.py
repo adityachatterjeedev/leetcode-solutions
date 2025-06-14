@@ -1,4 +1,4 @@
-# Last updated: 6/14/2025, 6:51:56 AM
+# Last updated: 6/14/2025, 6:52:06 AM
 class Solution:
     def majorityElement(self, a: List[int]) -> List[int]:
         n1 = n2 = None
