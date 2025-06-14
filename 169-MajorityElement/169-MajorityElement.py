@@ -1,18 +1,17 @@
-# Last updated: 6/14/2025, 4:37:28 AM
+# Last updated: 6/14/2025, 4:38:06 AM
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        #Moore's Voting Algorithm
-        candidate = None
-        count = 0
+        key = nums[0]
+        count = 1
 
-        for num in nums:
-            if count == 0:
-                candidate = num
-                count = 1
-            elif num != candidate:
-                count -= 1
-            else:
+        for i in range(1, len(nums)):
+            if nums[i] == key:
                 count += 1
-        
-        return candidate
+            else:
+                count -= 1
 
+            if count == 0:
+                key = nums[i]
+                count = 1
+
+        return key
