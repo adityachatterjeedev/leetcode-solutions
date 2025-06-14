@@ -1,29 +1,36 @@
-# Last updated: 6/14/2025, 6:48:32 AM
+# Last updated: 6/14/2025, 6:51:56 AM
 class Solution:
-    def majorityElement(self, nums: List[int]) -> List[int]:
-        length = len(nums)
-        if length in [0,1]:
-            return nums
-        elif length == 2:
-            if nums[0] == nums[1]:
-                return [nums[0]]
-            else:
-                return nums
-        
-        #Hashmap
-        counts = {}
-        result = []
-        boundary = (length // 3) + 1
-        for num in nums:
-            if num in counts:
-                counts[num] += 1
-                if counts[num] == boundary:
-                    result.append(num)
-                    if len(result) == 2:
-                        return result
-            else:
-                counts[num] = 1
-
-        return result
-
+    def majorityElement(self, a: List[int]) -> List[int]:
+        n1 = n2 = None
+        c1 = c2 = 0
+        t = len(a)//3
+        for i in a:
+            if i == n1:
+                c1+=1
+            elif i == n2:
+                c2+=1
+            elif c1 == 0:
+                n1 = i
+                c1 = 1
+            elif c2 == 0:
+                n2 = i
+                c2 = 1
             
+            else:
+                c1-=1
+                c2-=1
+        c1 = c2 = 0
+        r = []
+        for i in a:
+            if i == n1:
+                c1+=1
+            elif i == n2:
+                c2+=1
+        print(t)
+        print(n1,c1)
+        print(n2,c2)
+        if c1> t:
+            r.append(n1)
+        if c2> t:
+            r.append(n2)
+        return r
