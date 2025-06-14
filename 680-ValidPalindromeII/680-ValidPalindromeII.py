@@ -1,20 +1,13 @@
-# Last updated: 6/14/2025, 4:22:39 AM
+# Last updated: 6/14/2025, 4:32:12 AM
 class Solution:
     def validPalindrome(self, s: str) -> bool:
-        def is_palindrome(l, r):
-            while l < r:
-                if s[l] != s[r]:
-                    return False
-                l += 1
-                r -= 1
-            return True
-
-        l, r = 0, len(s) - 1
-        while l < r:
-            if s[l] != s[r]:
-                return (is_palindrome(l + 1, r) or 
-                        is_palindrome(l, r - 1))
-            l += 1
-            r -= 1
-
+        left = 0
+        right = len(s)-1
+        while left < right:
+            if s[left]!=s[right]:
+                one = s[left:right]
+                two = s[left+1:right+1]
+                return one == one[::-1] or two == two[::-1]
+            left += 1
+            right -= 1
         return True
