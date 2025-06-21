@@ -1,4 +1,4 @@
-# Last updated: 6/21/2025, 3:24:55 PM
+# Last updated: 6/21/2025, 3:26:31 PM
 class Solution:
     def numberOfSubarrays(self, nums: List[int], k: int) -> int:
         oddidx=[-1]
