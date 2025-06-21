@@ -1,4 +1,4 @@
-# Last updated: 6/21/2025, 6:13:10 PM
+# Last updated: 6/21/2025, 6:14:39 PM
 class Solution:
     def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
         if k <= 1:
@@ -9,7 +9,7 @@ class Solution:
         for right in range(len(nums)):
             agg *= nums[right]
             while agg >= k and left <= right:
-                agg /= nums[left]
+                agg //= nums[left]
                 left += 1
             result += right - left + 1
 
