@@ -1,14 +1,21 @@
-# Last updated: 6/21/2025, 3:27:14 PM
+# Last updated: 6/21/2025, 3:31:25 PM
 class Solution:
     def numberOfSubarrays(self, nums: List[int], k: int) -> int:
-        oddidx=[-1]
-        ans=0
-        for i in range(len(nums)):
-            if nums[i]%2:
-                oddidx.append(i)
-        oddidx.append(len(nums))
-        for i in range(1,len(oddidx)-k):
-            leftside=oddidx[i]-oddidx[i-1]
-            rightside=oddidx[i+k]-oddidx[i+k-1]
-            ans+=leftside*rightside
-        return ans
+        odd_count = 0
+        counts = {0: 1}
+
+        result = 0
+
+        for num in nums:
+            odd_count += num % 2
+            if odd_count >= k:
+                diff = odd_count - k
+                if diff in counts:
+                    result += counts[diff]
+            
+            if odd_count in counts:
+                counts[odd_count] += 1
+            else:
+                counts[odd_count] = 1
+
+        return result
