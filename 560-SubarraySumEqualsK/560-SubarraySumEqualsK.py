@@ -1,4 +1,4 @@
-# Last updated: 7/22/2025, 7:25:12 PM
+# Last updated: 7/22/2025, 7:25:29 PM
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         prefs = {0: 1}
