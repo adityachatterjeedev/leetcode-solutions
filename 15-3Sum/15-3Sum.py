@@ -1,4 +1,4 @@
-# Last updated: 2/8/2026, 10:00:17 PM
+# Last updated: 2/8/2026, 10:01:04 PM
 1class Solution:
 2    def threeSum(self, nums: List[int]) -> List[List[int]]:        
 3        nums.sort()
@@ -8,9 +8,9 @@
 7            if nums[i] > 0:
 8                break
 9            num = nums[i]
-10            if num + nums[i] + nums[i + 1] > 0:
+10            if num + nums[i + 1] + nums[i + 2] > 0:
 11                break
-12            if num + nums[-1] + nums[-2] <0:
+12            if num + nums[-1] + nums[-2] < 0:
 13                continue
 14            if i == 0 or num != nums[i - 1]:
 15                left = i + 1                    
