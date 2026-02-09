@@ -1,4 +1,4 @@
-# Last updated: 2/8/2026, 10:34:16 PM
+# Last updated: 2/8/2026, 10:36:30 PM
 1class Solution:
 2    def numRescueBoats(self, people: List[int], limit: int) -> int:
 3        people.sort()
