@@ -1,4 +1,4 @@
-# Last updated: 2/8/2026, 10:01:04 PM
+# Last updated: 2/8/2026, 10:02:27 PM
 1class Solution:
 2    def threeSum(self, nums: List[int]) -> List[List[int]]:        
 3        nums.sort()
@@ -7,26 +7,29 @@
 6        for i in range(len(nums) - 2):
 7            if nums[i] > 0:
 8                break
-9            num = nums[i]
-10            if num + nums[i + 1] + nums[i + 2] > 0:
-11                break
-12            if num + nums[-1] + nums[-2] < 0:
-13                continue
-14            if i == 0 or num != nums[i - 1]:
-15                left = i + 1                    
-16                right = len(nums) - 1
-17
-18                while left < right:
-19                    target = -num
-20                    total = nums[left] + nums[right]
-21                    if total == target:
-22                        l_num = nums[left]
-23                        res += [[num, l_num, nums[right]]]
-24                        while nums[left] == l_num and left < right:
-25                            left += 1
-26                    elif total < target:
-27                        left += 1
-28                    else:
-29                        right -= 1
-30                        
-31        return res
+9            
+10            num = nums[i]
+11            if i > 0 and nums[i] == nums[i - 1]:
+12                continue
+13            if num + nums[i + 1] + nums[i + 2] > 0:
+14                break
+15            if num + nums[-1] + nums[-2] < 0:
+16                continue
+17            
+18            left = i + 1                    
+19            right = len(nums) - 1
+20
+21            while left < right:
+22                target = -num
+23                total = nums[left] + nums[right]
+24                if total == target:
+25                    l_num = nums[left]
+26                    res += [[num, l_num, nums[right]]]
+27                    while nums[left] == l_num and left < right:
+28                        left += 1
+29                elif total < target:
+30                    left += 1
+31                else:
+32                    right -= 1
+33                        
+34        return res
